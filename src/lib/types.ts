@@ -8,7 +8,7 @@ export type Priority = "high" | "medium" | "low";
 export type TaskStatus = "todo" | "in_progress" | "done";
 export type HabitFrequency = "daily" | "weekly";
 
-export interface Database {
+export type Database = {
   public: {
     Tables: {
       categories: {
@@ -31,7 +31,9 @@ export interface Database {
           created_at?: string;
         };
         Update: Partial<Database["public"]["Tables"]["categories"]["Insert"]>;
-      };
+        Relationships: [];
+        };
+
       tasks: {
         Row: {
           id: string;
@@ -62,7 +64,9 @@ export interface Database {
           updated_at?: string;
         };
         Update: Partial<Database["public"]["Tables"]["tasks"]["Insert"]>;
-      };
+        Relationships: [];
+        };
+
       habits: {
         Row: {
           id: string;
@@ -85,7 +89,9 @@ export interface Database {
           created_at?: string;
         };
         Update: Partial<Database["public"]["Tables"]["habits"]["Insert"]>;
-      };
+        Relationships: [];
+        };
+
       habit_records: {
         Row: {
           id: string;
@@ -104,10 +110,27 @@ export interface Database {
           created_at?: string;
         };
         Update: Partial<Database["public"]["Tables"]["habit_records"]["Insert"]>;
+        Relationships: [];
       };
     };
+
+    Views: {
+      [_ in never]: never;
+    };
+
+    Functions: {
+      [_ in never]: never;
+    };
+
+    Enums: {
+      [_ in never]: never;
+    };
+
+    CompositeTypes: {
+      [_ in never]: never;
+    };
   };
-}
+};
 
 export type Category = Database["public"]["Tables"]["categories"]["Row"];
 export type Task = Database["public"]["Tables"]["tasks"]["Row"];
