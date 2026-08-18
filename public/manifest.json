@@ -1,0 +1,10 @@
+{
+  "name": "Life Manager",
+  "short_name": "LifeManager",
+  "description": "毎日の行動を可視化し、継続的な成長を支援する自己管理アプリ",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#F4F6F9",
+  "theme_color": "#F4F6F9",
+  "icons": []
+}
